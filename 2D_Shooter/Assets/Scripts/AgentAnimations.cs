@@ -19,10 +19,6 @@ public class AgentAnimations : MonoBehaviour
 
     public void AnimatePlayer (float velocity)
     {
-        if (velocity > 0)
-        {
-            SetWalkAnimation(true);
-        }
-
+        SetWalkAnimation(velocity > 0);
     }
 }
