@@ -27,7 +27,9 @@ public class Agentinput : MonoBehaviour
 
     private void GetPointerInput()
     {
-        var mouseInWorldSpace = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = mainCamera.nearClipPlane;
+        var mouseInWorldSpace = mainCamera.ScreenToWorldPoint(mousePos);
         OnPointerPositionChange?.Invoke(mouseInWorldSpace);
     }
 
