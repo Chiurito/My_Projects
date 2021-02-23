@@ -447,6 +447,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MovementData>k__BackingField: {fileID: 11400000, guid: a5800362ce9b6b5468dbffe8cb8308a9, type: 2}
   currentVelocity: 3
+  <OnVelocityChange>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1621353751}
+        m_TargetAssemblyTypeName: AgentAnimations, Assembly-CSharp
+        m_MethodName: AnimatePlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &835271821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +547,7 @@ GameObject:
   - component: {fileID: 1621353748}
   - component: {fileID: 1621353749}
   - component: {fileID: 1621353750}
+  - component: {fileID: 1621353751}
   m_Layer: 0
   m_Name: avatar
   m_TagString: Untagged
@@ -623,3 +639,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1621353751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621353747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4f2ebfff07cfb40bf5abc4d12da9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
