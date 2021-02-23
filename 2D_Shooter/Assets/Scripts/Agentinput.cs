@@ -6,19 +6,33 @@ using UnityEngine.Events;
 
 public class Agentinput : MonoBehaviour
 {
-    [SerializeField]
-    public UnityEvent<Vector2> OnMovementKeyPressed;
+    private Camera mainCamera;
+
+    [field: SerializeField]
+    public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
+
+    [field: SerializeField]
+    public UnityEvent<Vector2> OnPointerPositionChange { get; set; }
+
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+    }
 
     private void Update()
     {
         GetMovementInput();
+        GetPointerInput();
+    }
+
+    private void GetPointerInput()
+    {
+        var mouseInWorldSpace = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        OnPointerPositionChange?.Invoke(mouseInWorldSpace);
     }
 
     private void GetMovementInput()
     {
-        //se c'è qualche oggetto che e' in ascolto su questo evento (segno -> ?) invoca l'evento che in questo
-        //caso specifico passa un Vector2
-
         OnMovementKeyPressed?.Invoke(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
     }
 }
