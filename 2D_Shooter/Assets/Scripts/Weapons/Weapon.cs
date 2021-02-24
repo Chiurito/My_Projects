@@ -76,12 +76,31 @@ public class Weapon : MonoBehaviour
             else
             {
                 isShooting = false;
+                OnShootNoAmmo?.Invoke();
+                return;
             }
+            FinishShooting();
         }
+    }
+
+    private void FinishShooting()
+    {
+        StartCoroutine(DelayNextShootCoroutine());
+        if (weaponData.AutomaticFire == false)
+        {
+            isShooting = false;
+        }
+    }
+
+    protected IEnumerator DelayNextShootCoroutine()
+    {
+        reloadCoroutine = true;
+        yield return new WaitForSeconds(weaponData.WeaponDelay);
+        reloadCoroutine = false;
     }
 
     private void ShootBullet()
     {
-        throw new NotImplementedException();
+        Debug.Log("Shooting a bullet");
     }
 }

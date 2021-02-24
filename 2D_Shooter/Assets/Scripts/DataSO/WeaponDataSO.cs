@@ -7,6 +7,8 @@ using UnityEngine;
 public class WeaponDataSO : ScriptableObject
 {
     public int AmmoCapacity { get; internal set; }
+    public bool AutomaticFire { get; internal set; }
+    public float WeaponDelay { get; internal set; }
 
     internal int GetBulletCountToSpawn()
     {
