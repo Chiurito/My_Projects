@@ -45,7 +45,7 @@ public class AgentWeapon : MonoBehaviour
     {
         if (weapon != null)
         {
-            weapon.Shoot();
+            weapon.TryShooting();
         }
     }
 

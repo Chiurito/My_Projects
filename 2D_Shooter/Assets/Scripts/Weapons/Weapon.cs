@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,11 @@ public class Weapon : MonoBehaviour
 
     public bool AmmoFull { get => Ammo >= weaponData.AmmoCapacity;}
 
+    protected bool isShooting = false;
+
+    [SerializeField]
+    protected bool reloadCoroutine = false;
+
     [field: SerializeField]
     public UnityEvent OnShoot { get; set; }
 
@@ -32,13 +38,28 @@ public class Weapon : MonoBehaviour
     {
         Ammo = weaponData.AmmoCapacity;
     }
-    public void Shoot()
+    public void TryShooting()
     {
-        Debug.Log("Shooting!");
+        isShooting = true;
     }
 
     public void StopShooting()
     {
-        Debug.Log("Stop Shooting!");
+        isShooting = false;
+    }
+
+    public void Reload (int ammo)
+    {
+        Ammo += ammo;
+    }
+
+    private void Update()
+    {
+        UseWeapon();
+    }
+
+    private void UseWeapon()
+    {
+        throw new NotImplementedException();
     }
 }
