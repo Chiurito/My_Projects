@@ -24,4 +24,14 @@ public class RegularBullet : Bullet
             rigidBody2D.MovePosition(transform.position + BulletData.BulletSpeed * transform.right * Time.fixedDeltaTime);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
+
+    private void HitObstacles()
+    {
+        Debug.Log("Hit obstacle");
+    }
 }
