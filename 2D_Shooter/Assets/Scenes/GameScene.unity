@@ -399,8 +399,8 @@ GameObject:
   - component: {fileID: 300908323}
   - component: {fileID: 300908324}
   - component: {fileID: 300908325}
-  - component: {fileID: 300908326}
   - component: {fileID: 300908327}
+  - component: {fileID: 300908326}
   m_Layer: 0
   m_Name: assault_rifle
   m_TagString: Untagged
@@ -1193,8 +1193,8 @@ MonoBehaviour:
   <OnFireButtonPressed>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 300908327}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
+      - m_Target: {fileID: 1392144961}
+        m_TargetAssemblyTypeName: AgentWeapon, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 1
         m_Arguments:
@@ -1208,8 +1208,8 @@ MonoBehaviour:
   <OnFireButtonReleased>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 300908327}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
+      - m_Target: {fileID: 1392144961}
+        m_TargetAssemblyTypeName: AgentWeapon, Assembly-CSharp
         m_MethodName: StopShooting
         m_Mode: 1
         m_Arguments:
@@ -2457,6 +2457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!43 &1463944399
 Mesh:
   m_ObjectHideFlags: 0
