@@ -60,6 +60,28 @@ public class Weapon : MonoBehaviour
 
     private void UseWeapon()
     {
+        if (isShooting && reloadCoroutine == false)
+        {
+            if (Ammo > 0)
+            {
+                Ammo--;
+
+                OnShoot?.Invoke();
+
+                for (int i = 0; i < weaponData.GetBulletCountToSpawn(); i++)
+                {
+                    ShootBullet();
+                }
+            }
+            else
+            {
+                isShooting = false;
+            }
+        }
+    }
+
+    private void ShootBullet()
+    {
         throw new NotImplementedException();
     }
 }
