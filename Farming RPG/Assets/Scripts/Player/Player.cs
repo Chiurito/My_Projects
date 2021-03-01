@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 //Questa classe eredita la classe SingletonMonobehaviour. 
@@ -8,5 +6,7 @@ using UnityEngine;
 //Lo scopo di SingletonMonobehaviour è controllare se ci sono più istanze dello stesso oggetto in esecuzione.
 public class Player : SingletonMonobehaviour<Player>
 {
-    
+    //Movement parameters
+
+
 }
