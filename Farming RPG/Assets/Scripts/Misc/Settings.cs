@@ -2,6 +2,11 @@
 
 public static class Settings
 {
+    //Item fader parameters
+    public const float fadeInSeconds = 0.25f;
+    public const float fadeOutSeconds = 0.5f;
+    public const float targetAlpha = 0.45f;  //how transparent the item is going once it's faded
+
     //Player movement
     public const float runningSpeed = 5.333f;
     public const float walkingSpeed = 2.666f;
