@@ -3990,6 +3990,16 @@ PrefabInstance:
       propertyPath: invincibleLenght
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7359806612621957987, guid: 59f619659b8239848aa9ea0f4c1a01d1,
+        type: 3}
+      propertyPath: knockBackForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359806612621957987, guid: 59f619659b8239848aa9ea0f4c1a01d1,
+        type: 3}
+      propertyPath: knockBackLenght
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7359806612621957996, guid: 59f619659b8239848aa9ea0f4c1a01d1,
         type: 3}
       propertyPath: m_Name
