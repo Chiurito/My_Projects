@@ -10,25 +10,25 @@ public class CameraController : MonoBehaviour
 
     public float minHeight, maxHeight;
 
-    private float lastXPos;
+    private Vector2 lastPos;
 
     void Start()
     {
-        lastXPos = transform.position.x;
+        lastPos = transform.position;
     }
 
     void Update()
     {
         // Move the camera
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
-        float clampedY = Mathf.Clamp(transform.position.y, minHeight, maxHeight);
-        transform.position = new Vector3(transform.position.x, clampedY, 0f);
+        transform.position = new Vector3(target.position.x, Mathf.Clamp(target.position.y, minHeight, maxHeight), transform.position.z);
 
-        // Move layers
-        float amountToMoveX = transform.position.x - lastXPos;
-        farBackground.position += new Vector3(amountToMoveX, 0f, 0f);
-        middleBackground.position += new Vector3(amountToMoveX * 0.5f, 0f, 0f);
+        // Move layers for parallax
+        Vector2 amountToMove = new Vector2(transform.position.x - lastPos.x, transform.position.y - lastPos.y);
 
-        lastXPos = transform.position.x;
+        farBackground.position += new Vector3(amountToMove.x, amountToMove.y, 0f);
+
+        middleBackground.position += new Vector3(amountToMove.x, amountToMove.y, 0f) * 0.5f;
+
+        lastPos = transform.position;
     }
 }
