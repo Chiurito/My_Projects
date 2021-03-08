@@ -70,9 +70,18 @@ public class PlayerController : MonoBehaviour
             {
                 theSR.flipX = false;
             }
+        }
+        else
+        {
+            knockBackCounter -= Time.deltaTime;
+
+            if (!theSR.flipX)
+            {
+                theRB.velocity = new Vector2(-knockBackForce, theRB.velocity.y);
+            }
             else
             {
-                knockBackCounter -= Time.deltaTime;
+                theRB.velocity = new Vector2(knockBackForce, theRB.velocity.y);
             }
         }
 
@@ -83,5 +92,9 @@ public class PlayerController : MonoBehaviour
     public void KnockBack()
     {
         knockBackCounter = knockBackLenght;
+        
+        theRB.velocity = new Vector2(0f, knockBackForce);
+
+        anim.SetTrigger("hurt");
     }
 }

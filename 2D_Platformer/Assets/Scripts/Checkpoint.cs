@@ -1,0 +1,36 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Checkpoint : MonoBehaviour
+{
+    public SpriteRenderer theSR;
+
+    public Sprite cpOn, cpOff;
+    
+    void Start()
+    {
+        
+    }
+
+    
+    void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) // same as other.tag == "player"
+        {
+            CheckpointController.instance.DeactivateCheckpoints();
+
+            theSR.sprite = cpOn;
+        }
+    }
+
+    public void ResetCheckpoint()
+    {
+        theSR.sprite = cpOff;
+    }
+}
